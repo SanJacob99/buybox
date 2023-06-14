@@ -62,3 +62,8 @@ html, body {
     background-color:var(--secondary);
     border-color: var(--primary);
   }
+
+  .btn-login{
+    width: 100%;
+    margin-bottom: 10px;
+  }
