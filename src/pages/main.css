@@ -1,0 +1,64 @@
+:root {
+  --primary: azure;
+  --secondary:#a5c9e3;
+  --blueWhite: #a1cae7;
+  --deepBlue: #102636;
+}
+
+
+html, body {
+    height: 100%;
+  }
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: azure;
+    min-height: 100vh;
+  }
+
+  .mainNavbar {
+    background-color: var(--secondary);
+    color: var(--deepBlue);
+  }
+
+  .mainNavbarDropdown {
+    color: var(--deepBlue);
+    margin-bottom: 0;
+  }
+
+  .mainNavbarDropdown :hover {
+    color: var(--primary);
+  }
+  .userIcon  {
+    color: var(--deepBlue);
+  }
+
+
+  .userIcon :hover {
+    color: var(--primary);
+  }
+
+  .mainFooter {
+    background-color: var(--secondary);
+    color: var(--deepBlue);
+  }
+
+  .footerIco {
+    color: var(--deepBlue);
+    margin-left: 2%;
+  }
+
+  .btn-outline-my-btn-color {
+    color: var(--deepBlue);
+    background-color:var(--primary);
+    border-color: var(--secondary);
+  }
+
+  .btn-outline-my-btn-color:hover {
+    color: var(--primary);
+    background-color:var(--secondary);
+    border-color: var(--primary);
+  }
