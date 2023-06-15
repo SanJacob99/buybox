@@ -1,6 +1,6 @@
 :root {
   --primary: azure;
-  --secondary:#a5c9e3;
+  --secondary:white;
   --blueWhite: #a1cae7;
   --deepBlue: #102636;
 }
@@ -15,7 +15,7 @@ html, body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: azure;
+    background-color: white;
     min-height: 100vh;
   }
 

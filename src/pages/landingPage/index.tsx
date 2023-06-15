@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 
 export default function LandingPage() {
-  console.log(process.env.AWS_BASE_URL)
   return (
     <div className="container">
       <div className="row">
