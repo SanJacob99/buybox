@@ -5,22 +5,16 @@
   --deepBlue: #102636;
 }
 
-
-html, body {
-    height: 100%;
-  }
-
 .centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: white;
-    min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: white;
+  min-height: 100vh;
   }
 
   .mainNavbar {
-    background-color: var(--secondary);
     color: var(--deepBlue);
   }
 
@@ -66,4 +60,44 @@ html, body {
   .btn-login{
     width: 100%;
     margin-bottom: 10px;
+  }
+
+  .featured-img {
+    -webkit-filter: brightness(60%);
+  }
+  .featured-img:hover {
+    -webkit-filter: brightness(80%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  .featured-img-col{
+    position: relative;
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 80%;
+    left: 6%;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-size: 25px;
+    padding: 8px;
+    font-weight: 700;
+  }
+
+  .text-overlay-short {
+    position: absolute;
+    top: 62%;
+    left: 3%;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-size: 25px;
+    padding: 8px;
+    font-weight: 700;
   }

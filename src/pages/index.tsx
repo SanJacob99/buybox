@@ -1,17 +1,7 @@
 import Head from 'next/head'
-import React, { useState } from 'react'
-import { Inter } from 'next/font/google'
+import React from 'react'
 import LandingPage from './landingPage'
-import { userContext } from '@/context/userContext'
-import LoaderComponent from '@/components/loading'
-import { Layout } from 'antd'
-import FooterCopyRight from '../components/Footer'
-import NavBarGlobal from '@/components/NavBar'
 import MainLayout from '@/components/MainLayout'
-
-const { Footer, Content } = Layout
-
-const inter = Inter({ subsets: ['latin'] })
 
 const Home = () => {
   return (

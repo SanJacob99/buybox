@@ -18,7 +18,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         <React.Suspense fallback={<LoaderComponent title="Loading Site" />}>
           <Layout>
             <NavBarGlobal />
-            <Content className="centered">{children}</Content>
+            <Content>{children}</Content>
             <Footer className="footer mainFooter">
               <FooterCopyRight />
             </Footer>

@@ -42,54 +42,45 @@ const NavBarGlobal = () => {
   ]
 
   return (
-    <nav className="navbar row mainNavbar">
-      <div className="col-8 mx-5 d-flex align-items-center ">
-        <Image
-          src="https://buyboximages.s3.us-west-1.amazonaws.com/BuyBoxMainLogo.png"
-          alt="Image 2"
-          width={260}
-          height={100}
-        />
-      </div>
-      <div className=" col mx-5 d-flex align-items-center ">
-        <a className="navbar-brand ms-2" onClick={() => handleNavigation('/')}>
-          Products
-        </a>
-      </div>
-      <Dropdown menu={{ items: categories }} className="mainNavbarDropdown col">
-        <a onClick={(e) => e.preventDefault()} className="navbar-brand">
-          Categories
-        </a>
-      </Dropdown>
-      {/* <Dropdown menu={{ items }} className="mainNavbarDropdown">
-        <a onClick={(e) => e.preventDefault()}>
-          <Space>Mis direcciones</Space>
-        </a>
-      </Dropdown> */}
-      {/* <form className="form-inline flex-grow-1 mx-5">
-        <div className="input-group">
-          <button
-            className="btn my-2 my-sm-0 btn-outline-my-btn-color"
-            type="submit"
-          >
-            Buscar
-          </button>
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Buscar"
-            aria-label="Buscar"
+    <div className="container">
+      <nav className="navbar mainNavbar">
+        <div className="col-9 d-flex align-items-center ">
+          <Image
+            src="https://buyboximages.s3.us-west-1.amazonaws.com/BuyBoxMainLogo.png"
+            alt="Image 2"
+            width={260}
+            height={100}
           />
         </div>
-      </form> */}
-      <Dropdown menu={{ items }} className="col mx-5 userIcon">
-        <a>
-          <Space>
-            <FontAwesomeIcon icon={faCartShopping} size="3x" />
-          </Space>
-        </a>
-      </Dropdown>
-    </nav>
+        <div className="col text-end">
+          <a
+            className="navbar-brand ms-2"
+            onClick={() => handleNavigation('/')}
+          >
+            Products
+          </a>
+        </div>
+        <div className="col text-end">
+          <Dropdown
+            menu={{ items: categories }}
+            className="mainNavbarDropdown col"
+          >
+            <a onClick={(e) => e.preventDefault()} className="navbar-brand">
+              Categories
+            </a>
+          </Dropdown>
+        </div>
+        <div className="col text-center">
+          <Dropdown menu={{ items }} className="col  userIcon">
+            <a>
+              <Space>
+                <FontAwesomeIcon icon={faCartShopping} size="3x" />
+              </Space>
+            </a>
+          </Dropdown>
+        </div>
+      </nav>
+    </div>
   )
 }
 
