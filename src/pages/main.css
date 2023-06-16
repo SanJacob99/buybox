@@ -101,3 +101,10 @@
     padding: 8px;
     font-weight: 700;
   }
+
+  .divider-text{
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
