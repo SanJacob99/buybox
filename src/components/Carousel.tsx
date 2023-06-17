@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { motion, useMotionValue } from 'framer-motion'
 import { Card } from 'antd'
@@ -11,7 +11,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const { Meta } = Card
 
 const Carousel = () => {
-  const [carouselPosition, setcarouselPosition] = useState(0)
   const images = [
     {
       url: 'https://buyboximages.s3.us-west-1.amazonaws.com/CarrouselImage1.jpg',
@@ -64,22 +63,20 @@ const Carousel = () => {
       name: 'Summer Set',
     },
   ]
+  const x = useMotionValue(0)
+  const slideWidth = -140 * images.length
 
-  console.log(carouselPosition)
+  const handleScrollLeft = () => {
+    const newX = Math.max(x.get() + 160, slideWidth)
+    if (newX <= 0) {
+      x.set(newX)
+    }
+  }
 
-  const handleCrousel = (label: string) => {
-    if (label === 'right') {
-      if (carouselPosition - 140 < -140 * images.length) {
-        setcarouselPosition(0)
-        return
-      }
-      setcarouselPosition((prevState) => prevState - 140)
-    } else {
-      if (carouselPosition + 140 > 0) {
-        setcarouselPosition(0)
-        return
-      }
-      setcarouselPosition((prevState) => prevState + 140)
+  const handleScrollRight = () => {
+    const newX = Math.min(x.get() - 160, 0)
+    if (newX >= slideWidth) {
+      x.set(newX)
     }
   }
 
@@ -90,7 +87,7 @@ const Carousel = () => {
         style={{
           margin: '150px 0 0 -4%',
         }}
-        onClick={() => handleCrousel('left')}
+        onClick={handleScrollLeft}
       >
         <FontAwesomeIcon icon={faChevronLeft} size="3x" />
       </a>
@@ -99,7 +96,7 @@ const Carousel = () => {
         style={{
           margin: '150px 0 0 70%',
         }}
-        onClick={() => handleCrousel('right')}
+        onClick={handleScrollRight}
       >
         <FontAwesomeIcon icon={faChevronRight} size="3x" />
       </a>
@@ -107,11 +104,9 @@ const Carousel = () => {
         <motion.div
           className="slider"
           drag="x"
-          dragConstraints={{ right: 0, left: -140 * images.length }}
-          animate={{ x: carouselPosition }}
-          onUpdate={(latest) => {
-            if (typeof latest.x !== 'number') return
-            setcarouselPosition(latest.x)
+          dragConstraints={{ right: 0, left: slideWidth }}
+          style={{
+            x,
           }}
         >
           {images.map((item, index) => (
