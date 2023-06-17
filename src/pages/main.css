@@ -107,4 +107,34 @@
     font-weight: 700;
     margin-top: 40px;
     margin-bottom: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    color: #11303a;
+  }
+
+  .item{
+    padding-right: 30px;
+  }
+  .carousel-image{
+      pointer-events: none;
+  }
+  .slider{
+      display: flex;
+      cursor: grab;
+  }
+  .slider-container{
+      margin: 0 auto;
+      overflow-x: hidden;
+  }
+  .carousel-control{
+    position: absolute;
+    z-index:  999;   
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    color: black;
+
   }
