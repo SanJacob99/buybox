@@ -31,6 +31,13 @@
   color: var(--deepBlue);
 }
 
+.navbar-brand {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 .navbar-brand :hover {
   color: #335e6f;
 }
@@ -200,13 +207,25 @@
   z-index: 2;
   position: fixed;
   transition: 0.5s;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
-.nav-upper,
 .nav-heading {
-  display: grid;
+  padding: 10% 10% 0 10%;
 }
 
-.nav-heading {
-  grid-template-columns: 2fr 1fr;
+.nav-body {
+  padding: 0 10% 0 10%;
+}
+
+.sider-body ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sider-body ul li {
+  padding: 10px 0 10px 0;
 }
