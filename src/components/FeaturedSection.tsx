@@ -11,7 +11,7 @@ const arimo = Arimo({
 const FeaturedSection = () => {
   return (
     <div className="row">
-      <div className="col-6 featured-img-col ">
+      <a className="col-6 featured-img-col ">
         <Image
           src={'https://buyboximages.s3.us-west-1.amazonaws.com/featured.jpg'}
           width={630}
@@ -22,8 +22,8 @@ const FeaturedSection = () => {
         <div className={`${arimo.className} font-sans text-overlay`}>
           ENJOY UP TO 30% DISCOUNT
         </div>
-      </div>
-      <div className="col-3 featured-img-col ">
+      </a>
+      <a className="col-3 featured-img-col ">
         <div style={{ position: 'relative' }}>
           <Image
             src={
@@ -38,8 +38,8 @@ const FeaturedSection = () => {
             TOPS
           </div>
         </div>
-      </div>
-      <div className="col-3 p-0 ">
+      </a>
+      <a className="col-3 p-0 ">
         <div style={{ position: 'relative' }}>
           <Image
             src={
@@ -68,7 +68,7 @@ const FeaturedSection = () => {
             ACCESORIES
           </div>
         </div>
-      </div>
+      </a>
     </div>
   )
 }
