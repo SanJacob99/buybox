@@ -7,62 +7,13 @@ import {
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { productInfo } from './ProductData'
 
 const { Meta } = Card
 
 const Carousel = () => {
-  const images = [
-    {
-      url: 'https://buyboximages.s3.us-west-1.amazonaws.com/CarrouselImage1.jpg',
-      price: '15.99',
-      name: 'Grey Top',
-    },
-    {
-      url: 'https://buyboximages.s3.us-west-1.amazonaws.com/CarrouselImage2.jpg',
-      price: '13.99',
-      name: 'Beach dress',
-    },
-    {
-      url: 'https://buyboximages.s3.us-west-1.amazonaws.com/CarrouselImage3.jpg',
-      price: '29.99',
-      name: 'Lingerie',
-    },
-    {
-      url: 'https://buyboximages.s3.us-west-1.amazonaws.com/CarrouselImage4.jpg',
-      price: '10.99',
-      name: 'White top',
-    },
-    {
-      url: 'https://buyboximages.s3.us-west-1.amazonaws.com/CarrouselImage5.jpg',
-      price: '11.99',
-      name: 'Brooklyn Set',
-    },
-    {
-      url: 'https://buyboximages.s3.us-west-1.amazonaws.com/CarrouselImage6.jpg',
-      price: '25.99',
-      name: 'Aquamarine Bikini',
-    },
-    {
-      url: 'https://buyboximages.s3.us-west-1.amazonaws.com/CarrouselImage7.jpg',
-      price: '26.99',
-      name: 'One Pice Black Bikini',
-    },
-    {
-      url: 'https://buyboximages.s3.us-west-1.amazonaws.com/CarrouselImage8.jpg',
-      price: '12.99',
-      name: 'Black Cross Top',
-    },
-    {
-      url: 'https://buyboximages.s3.us-west-1.amazonaws.com/CarrouselImage9.jpg',
-      price: '31.99',
-      name: 'Summer Palazzo',
-    },
-    {
-      url: 'https://buyboximages.s3.us-west-1.amazonaws.com/CarrouselImage10.jpg',
-      price: '12.99',
-      name: 'Summer Set',
-    },
-  ]
+  const images = productInfo
+
   const x = useMotionValue(0)
   const slideWidth = -140 * images.length
 
@@ -118,7 +69,7 @@ const Carousel = () => {
                   <Image
                     src={item.url}
                     width={200}
-                    height={380}
+                    height={350}
                     alt={`Image ${index}`}
                     className="carousel-image"
                   />
