@@ -14,9 +14,16 @@ export default function FooterCopyRight() {
             All Rights Reserved | <span>{thisYear.getFullYear()} </span>
           </small>
         </div>
-        <div className="row text-center">
+        <div className="row text-center ms-1">
           <Link href="/">
-            <FontAwesomeIcon icon={faBox} size="3x" className="footerIco" />
+            <Image
+              src={
+                'https://buyboximages.s3.us-west-1.amazonaws.com/mainLogo.png'
+              }
+              width={50}
+              height={50}
+              alt="Main Logo"
+            />
           </Link>
         </div>
       </div>

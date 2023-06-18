@@ -81,3 +81,9 @@ export const flashProductInfo = [
     bgColor: '#10313a',
   },
 ]
+
+export const Categories = [
+  ['Clothes', 'Tops', 'Bottoms', 'Two pieces outfit'],
+  ['Dresses', 'Short Dresses', 'Long Dresses', 'Special'],
+  ['Accesories', 'Watches', 'Jewlery', 'Shoes'],
+]
