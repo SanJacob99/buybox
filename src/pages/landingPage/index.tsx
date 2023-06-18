@@ -16,12 +16,11 @@ const arimo = Arimo({
   weight: ['700', '400'],
   variable: '--font-inter',
 })
-// Flash sales pop up while scrollin down
 
 export default function LandingPage() {
   const images = flashProductInfo
   return (
-    <div className="container ">
+    <div className="container landing-page">
       <FeaturedSection />
       <div className="divider-text">
         <span
