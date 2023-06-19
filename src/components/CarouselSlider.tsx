@@ -11,7 +11,7 @@ import { productInfo } from './ProductData'
 
 const { Meta } = Card
 
-const Carousel = () => {
+const CarouselSlider = () => {
   const images = productInfo
 
   const x = useMotionValue(0)
@@ -85,4 +85,4 @@ const Carousel = () => {
   )
 }
 
-export default Carousel
+export default CarouselSlider

@@ -229,3 +229,29 @@
 .sider-body ul li {
   padding: 10px 0 10px 0;
 }
+
+.slider-section {
+  margin-top: 40px;
+}
+
+.slider-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bannerdefaultColor {
+  background-color: white;
+}
+
+.banner1Color {
+  background-color: #00b1d5;
+}
+
+.banner2Color {
+  background-color: #3a3035;
+}
+
+.banner3Color {
+  background-color: #4d038a;
+}
