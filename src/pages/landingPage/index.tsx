@@ -61,7 +61,7 @@ export default function LandingPage() {
       </div>
       <CarouselSlider />
       <div className="slider-section ">
-        <Carousel autoplay>
+        <Carousel autoplay effect="fade">
           {banner.map((item, index) => (
             <div
               key={index}
