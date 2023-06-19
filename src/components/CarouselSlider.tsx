@@ -11,7 +11,7 @@ import { productInfo } from './ProductData'
 
 const { Meta } = Card
 
-const Carousel = () => {
+const CarouselSlider = () => {
   const images = productInfo
 
   const x = useMotionValue(0)
@@ -59,6 +59,7 @@ const Carousel = () => {
           style={{
             x,
           }}
+          transition={{ type: 'spring' }}
         >
           {images.map((item, index) => (
             <motion.div key={index} className="item">
@@ -85,4 +86,4 @@ const Carousel = () => {
   )
 }
 
-export default Carousel
+export default CarouselSlider

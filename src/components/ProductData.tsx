@@ -87,3 +87,18 @@ export const Categories = [
   ['Dresses', 'Short Dresses', 'Long Dresses', 'Special'],
   ['Accesories', 'Watches', 'Jewlery', 'Shoes'],
 ]
+
+export const banners = [
+  {
+    url: 'https://buyboximages.s3.us-west-1.amazonaws.com/8261298.jpg',
+    backgroundColor: 'aqua',
+  },
+  {
+    url: 'https://buyboximages.s3.us-west-1.amazonaws.com/6270656.png',
+    backgroundColor: 'grey',
+  },
+  {
+    url: 'https://buyboximages.s3.us-west-1.amazonaws.com/3863885.jpg',
+    backgroundColor: 'purple',
+  },
+]
