@@ -9,12 +9,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CardPopUp from '@/components/PopUpCard'
 import { banners, flashProductInfo } from '@/components/ProductData'
 import CarouselSlider from '@/components/CarouselSlider'
-import { Carousel } from 'antd'
+import { Button, Carousel, Input } from 'antd'
 import Image from 'next/image'
 
 const arimo = Arimo({
   subsets: ['latin'],
-  weight: ['700', '400'],
+  weight: ['700'],
   variable: '--font-inter',
 })
 
@@ -53,8 +53,22 @@ export default function LandingPage() {
           {banner.map((item, index) => (
             <div
               key={index}
-              className={setBackgroundColor(item.backgroundColor)}
+              className={`${setBackgroundColor(
+                item.backgroundColor
+              )} d-flex align-items-center`}
             >
+              <div style={{ width: '100%', padding: 20 }}>
+                <span
+                  className={`${arimo.className} font-sans banner-slider-font`}
+                >
+                  Suscribe to get exclusive deals
+                </span>
+                <div className="banner-text">
+                  <Input placeholder="Your Email here" />
+                  <Button>Suscribe</Button>
+                </div>
+              </div>
+
               <Image
                 src={item.url}
                 width={800}

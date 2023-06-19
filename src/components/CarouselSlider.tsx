@@ -59,6 +59,7 @@ const CarouselSlider = () => {
           style={{
             x,
           }}
+          transition={{ type: 'spring' }}
         >
           {images.map((item, index) => (
             <motion.div key={index} className="item">
