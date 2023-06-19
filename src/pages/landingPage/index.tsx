@@ -35,6 +35,18 @@ export default function LandingPage() {
         return 'bannerdefaultColor'
     }
   }
+  const setBackgroundColorRGB = (color: string) => {
+    switch (color) {
+      case 'aqua':
+        return 'rgba(0, 177,	213, 1)'
+      case 'grey':
+        return 'rgba(58,	48,	53, 1)'
+      case 'purple':
+        return 'rgba(77,	3,	138, 1)'
+      default:
+        return 'rgba(0,	0,	0, 1)'
+    }
+  }
 
   return (
     <div className="container landing-page">
@@ -49,34 +61,75 @@ export default function LandingPage() {
       </div>
       <CarouselSlider />
       <div className="slider-section ">
-        <Carousel autoplay>
+        <Carousel autoplay effect="fade">
           {banner.map((item, index) => (
             <div
               key={index}
-              className={`${setBackgroundColor(
-                item.backgroundColor
-              )} d-flex align-items-center`}
+              className={`${setBackgroundColor(item.backgroundColor)} d-flex  `}
             >
-              <div style={{ width: '100%', padding: 20 }}>
-                <span
-                  className={`${arimo.className} font-sans banner-slider-font`}
-                >
-                  Suscribe to get exclusive deals
-                </span>
-                <div className="banner-text">
-                  <Input placeholder="Your Email here" />
-                  <Button>Suscribe</Button>
-                </div>
+              <div
+                style={{
+                  width: '20%',
+                  position: 'relative',
+                }}
+              >
+                <Image
+                  src={banner[index === 0 ? 2 : index - 1].url}
+                  alt="Image"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'right' }}
+                />
+                <div
+                  style={{
+                    content: '',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    background: `linear-gradient(to right, rgba(0, 0, 0, 0) 0%,${setBackgroundColorRGB(
+                      item.backgroundColor
+                    )} 100%)`,
+                    zIndex: 2,
+                  }}
+                />
               </div>
-
-              <Image
-                src={item.url}
-                width={800}
-                height={(853 / 1280) * 800}
-                alt={'BannerInfo'}
-                className="slider-img"
-                style={{ padding: '10px' }}
-              />
+              <div>
+                <Image
+                  src={item.url}
+                  width={800}
+                  height={(853 / 1280) * 800}
+                  alt={'BannerInfo'}
+                  className="slider-img"
+                />
+              </div>
+              <div
+                style={{
+                  width: '20%',
+                  position: 'relative',
+                }}
+              >
+                <Image
+                  src={banner[index === 2 ? 0 : index + 1].url}
+                  alt="Image"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'right' }}
+                />
+                <div
+                  style={{
+                    content: '',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    background: `linear-gradient(to left, rgba(0, 0, 0, 0) 0%,${setBackgroundColorRGB(
+                      item.backgroundColor
+                    )} 100%)`,
+                    zIndex: 2,
+                  }}
+                />
+              </div>
             </div>
           ))}
         </Carousel>
