@@ -78,6 +78,7 @@
 
 .featured-img {
   -webkit-filter: brightness(60%);
+  -webkit-user-drag: none;
 }
 .featured-img:hover {
   -webkit-filter: brightness(80%);
@@ -102,6 +103,11 @@
   font-size: 25px;
   padding: 8px;
   font-weight: 700;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .text-overlay-short {
@@ -114,6 +120,19 @@
   font-size: 25px;
   padding: 8px;
   font-weight: 700;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.onlyclick {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .divider-text {
@@ -265,4 +284,13 @@
 
 .banner3Color {
   background-color: #4d038a;
+}
+.who-we-are-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wwa-image {
+  padding: 30px;
 }

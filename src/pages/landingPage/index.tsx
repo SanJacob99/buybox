@@ -60,7 +60,7 @@ export default function LandingPage() {
         <FontAwesomeIcon icon={faUmbrellaBeach} size="3x" />
       </div>
       <CarouselSlider />
-      <div className="slider-section ">
+      <div className="slider-section onlyclick">
         <Carousel autoplay effect="fade">
           {banner.map((item, index) => (
             <div
@@ -113,7 +113,7 @@ export default function LandingPage() {
                   src={banner[index === 2 ? 0 : index + 1].url}
                   alt="Image"
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'right' }}
+                  style={{ objectFit: 'cover', objectPosition: 'left' }}
                 />
                 <div
                   style={{
@@ -153,6 +153,33 @@ export default function LandingPage() {
             />
           </div>
         ))}
+      </div>
+      <div className="who-we-are-section">
+        <Image
+          src={'https://buyboximages.s3.us-west-1.amazonaws.com/mainLogo.png'}
+          width={300}
+          height={300}
+          alt="main logo"
+          className="wwa-image"
+        />
+        <div>
+          <h4>Who we are</h4>
+          <p className={`${arimo.className} font-sans `}>
+            Redefining E-Commerce for You At BuyBox, we are revolutionizing the
+            way you shop online. We offer a diverse range of high-quality
+            products across various categories, carefully curated to cater to
+            your unique needs and preferences. With our user-friendly website,
+            personalized recommendations, and competitive prices, we ensure a
+            seamless and enjoyable shopping experience. Our commitment extends
+            beyond convenience; we prioritize your satisfaction and security.
+            Your personal information is safeguarded with state-of-the-art
+            security measures, and our dedicated customer support team is
+            available 24/7 to address any concerns. Join us in embracing a new
+            era of online shopping, where convenience, reliability, and
+            delightful discoveries await you. Experience the difference with
+            BuyBox and unlock a world of possibilities at your fingertips.
+          </p>
+        </div>
       </div>
     </div>
   )
