@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Arimo } from 'next/font/google'
+import { useRouter } from 'next/router'
 
 const arimo = Arimo({
   subsets: ['latin'],
@@ -9,9 +10,18 @@ const arimo = Arimo({
 })
 
 const FeaturedSection = () => {
+  const router = useRouter()
+
+  const handleNavigation = (route: string) => {
+    router.push(route)
+  }
+
   return (
     <div className="row">
-      <a className="col-6 featured-img-col onlyclick">
+      <a
+        className="col-6 featured-img-col onlyclick"
+        onClick={() => handleNavigation('/categories')}
+      >
         <Image
           src={'https://buyboximages.s3.us-west-1.amazonaws.com/featured.jpg'}
           width={630}
