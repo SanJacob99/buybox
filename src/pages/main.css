@@ -294,3 +294,8 @@
 .wwa-image {
   padding: 30px;
 }
+
+/* Categorie styles */
+.categorie-selected {
+  font-size: 35px;
+}
