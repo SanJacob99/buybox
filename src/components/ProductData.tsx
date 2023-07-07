@@ -88,6 +88,18 @@ export const Categories = [
   ['Accesories', 'Watches', 'Jewlery', 'Shoes'],
 ]
 
+export const CategoriesPage = [
+  'Tops',
+  'Bottoms',
+  'Two pieces outfit',
+  'Short Dresses',
+  'Long Dresses',
+  'Special',
+  'Watches',
+  'Jewlery',
+  'Shoes',
+]
+
 export const banners = [
   {
     url: 'https://buyboximages.s3.us-west-1.amazonaws.com/8261298.jpg',
