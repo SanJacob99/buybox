@@ -1,4 +1,4 @@
-# Ecommerce Webpage - React Project
+# BuyBox - React Project
 
 This is a React-based ecommerce webpage project built with Next.js, Bootstrap, Ant Design (antd), CSS, and React. It provides a foundation for developing a responsive and stylish ecommerce website.
 
