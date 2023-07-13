@@ -4,6 +4,11 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Arimo } from 'next/font/google'
 import { CategoriesPage } from '@/components/ProductData'
+import { productInfo } from '@/components/ProductData'
+import Image from 'next/image'
+import { Card } from 'antd'
+
+const { Meta } = Card
 
 const arimo = Arimo({
   subsets: ['latin'],
@@ -51,6 +56,30 @@ const Categories = () => {
               <a className={`${arimo.className} categorie-option `}>
                 {categorie}
               </a>
+            </div>
+          ))}
+        </div>
+        <div className="row mt-3 categorie-showcase">
+          {productInfo.map((product, index) => (
+            <div
+              key={index}
+              className="col-lg-3 col-md-4 col-sm-6 col-12 p-3 d-flex justify-content-center"
+            >
+              <Card
+                hoverable
+                style={{ width: 240 }}
+                cover={
+                  <Image
+                    src={product.url}
+                    width={200}
+                    height={350}
+                    alt={`Image ${index}`}
+                    className="categorie-image"
+                  />
+                }
+              >
+                <Meta title={product.name} description={`${product.price} $`} />
+              </Card>
             </div>
           ))}
         </div>
