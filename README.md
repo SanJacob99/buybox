@@ -1,38 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ecommerce Webpage - React Project
 
-## Getting Started
+This is a React-based ecommerce webpage project built with Next.js, Bootstrap, Ant Design (antd), CSS, and React. It provides a foundation for developing a responsive and stylish ecommerce website.
 
-First, run the development server:
+## Features
+
+- Server-side rendering using Next.js for improved performance and SEO.
+- Responsive design using Bootstrap for seamless display across different devices.
+- UI components and styling with Ant Design (antd) for a modern and consistent look.
+- Custom CSS for additional styling and customization.
+- React for building dynamic and interactive user interfaces.
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/SanJacob99/buybox.git
+```
+
+2. Install the dependencies:
+
+```bash
+npm i
+```
+
+3. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open your browser and visit http://localhost:3000 to see the webpage.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+├── components/            # Reusable UI components
+├── pages/                 # Page components for Next.js
+├── public/                # Static assets (images, icons, etc.)
+├── main.css               # Custom CSS styles
+├── .babelrc               # Babel configuration
+├── next.config.js         # Next.js configuration
+├── package.json           # Project dependencies and scripts
+├── api/                   # Next.js endpoints
+├── context/               # React Context
+├── interface/             # React Interfaces
+├── tsconfig.json          # TypeScript configuration
+└── models                 # TypeScript Models
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Contributions are welcome! If you have any suggestions, bug fixes, or feature enhancements, please open an issue, contact me or submit a pull request.
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the MIT License.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Acknowledgements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next.js - React framework for server-side rendering and static site generation.
+- Bootstrap - CSS framework for responsive web design.
+- Ant Design - UI library with a set of customizable components.
+- React - JavaScript library for building user interfaces.
+- TypeScript - Typed superset of JavaScript for static typing and improved tooling.
