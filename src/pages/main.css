@@ -334,3 +334,7 @@
 .categorie-image {
   pointer-events: none;
 }
+
+.goBack-Button:hover {
+  cursor: pointer;
+}

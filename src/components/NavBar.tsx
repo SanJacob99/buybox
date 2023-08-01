@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { Arimo } from 'next/font/google'
 import { ISerchContext } from '@/interface/searchContext'
 import { userContext } from '@/context/userContext'
+import Link from 'next/link'
 
 const arimo = Arimo({
   subsets: ['latin'],
@@ -59,12 +60,14 @@ const NavBarGlobal = () => {
     <div className={`${arimo.className} container navBar-container`}>
       <nav className="navbar mainNavbar ">
         <div className="col-9 d-flex align-items-center ">
-          <Image
-            src="https://buyboximages.s3.us-west-1.amazonaws.com/BuyBoxMainLogo.png"
-            alt="Image 2"
-            width={260}
-            height={100}
-          />
+          <Link href="/">
+            <Image
+              src="https://buyboximages.s3.us-west-1.amazonaws.com/BuyBoxMainLogo.png"
+              alt="Image 2"
+              width={260}
+              height={100}
+            />
+          </Link>
         </div>
         <div className="col text-end">
           <a

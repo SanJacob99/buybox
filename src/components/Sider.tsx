@@ -3,6 +3,7 @@ import { ISerchContext } from '@/interface/searchContext'
 import React, { useContext } from 'react'
 import { Divider } from 'antd'
 import { Arimo } from 'next/font/google'
+import { useRouter } from 'next/router'
 import { Categories } from './ProductData'
 
 const arimo = Arimo({
@@ -14,6 +15,12 @@ const arimo = Arimo({
 const Sider = () => {
   const { searchContent } = useContext<any | ISerchContext>(userContext)
   const categories = Categories
+  const router = useRouter()
+
+  const handleNavigation = (categorie: string) => {
+    router.push(`categories?defaultCategorie=${categorie}`)
+  }
+
   return (
     <div
       className={`${arimo.className} sider-container`}
@@ -38,7 +45,7 @@ const Sider = () => {
                     index === 0 ? (
                       <></>
                     ) : (
-                      <li key={index}>
+                      <li key={index} onClick={() => handleNavigation(items)}>
                         <a>{items}</a>
                       </li>
                     )
