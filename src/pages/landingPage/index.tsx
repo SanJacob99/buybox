@@ -65,7 +65,18 @@ export default function LandingPage() {
         </span>
         <FontAwesomeIcon icon={faUmbrellaBeach} size="3x" />
       </div>
-      <CarouselSlider />
+      <div className="row flash-sale-section">
+        {images.map((item, index) => (
+          <div key={index} className="col d-flex align-items-center">
+            <CardPopUp
+              url={item.url}
+              name={item.name}
+              price={item.price}
+              backgroundColor={item.bgColor}
+            />
+          </div>
+        ))}
+      </div>
       <div className="slider-section onlyclick">
         <Carousel autoplay effect="fade">
           {banner.map((item, index) => (
@@ -140,6 +151,7 @@ export default function LandingPage() {
           ))}
         </Carousel>
       </div>
+
       <div className="divider-text">
         <span
           className={`${arimo.className} font-sans d-flex align-items-center`}
@@ -148,18 +160,7 @@ export default function LandingPage() {
         </span>
         <FontAwesomeIcon icon={faThunderstorm} size="3x" />
       </div>
-      <div className="row flash-sale-section">
-        {images.map((item, index) => (
-          <div key={index} className="col d-flex align-items-center">
-            <CardPopUp
-              url={item.url}
-              name={item.name}
-              price={item.price}
-              backgroundColor={item.bgColor}
-            />
-          </div>
-        ))}
-      </div>
+      <CarouselSlider />
       <div className="who-we-are-section">
         <Image
           src={'https://buyboximages.s3.us-west-1.amazonaws.com/mainLogo.png'}

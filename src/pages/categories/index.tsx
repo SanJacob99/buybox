@@ -1,12 +1,13 @@
 import MainLayout from '@/components/MainLayout'
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Arimo } from 'next/font/google'
 import { CategoriesPage } from '@/components/ProductData'
 import { productInfo } from '@/components/ProductData'
 import Image from 'next/image'
-import { Card } from 'antd'
+import { Card, Pagination } from 'antd'
 
 const { Meta } = Card
 
@@ -17,14 +18,45 @@ const arimo = Arimo({
 })
 
 const Categories = () => {
+  const router = useRouter()
   const categories = CategoriesPage
-  const [selectedCategorie, setselectedCategorie] = useState('')
+  const postPerPage = 8
+  const { defaultCategorie } = router.query
+  const [selectedCategorie, setselectedCategorie] = useState(
+    defaultCategorie || ''
+  )
+  const [maxPages, setmaxPages] = useState(productInfo.length)
+  const [currentPage, setcurrentPage] = useState(1)
+  const [products, setProducts] = useState(
+    productInfo.slice(0, postPerPage * currentPage)
+  )
+
+  const setPage = (pageNumber: number, pageSize: number) => {
+    setcurrentPage(pageNumber)
+    let copyProduct = productInfo.slice(
+      pageNumber * pageSize - pageSize,
+      pageNumber * pageSize
+    )
+    setProducts(copyProduct)
+  }
 
   const changeHandle = (categorie: string) => {
     if (categorie === selectedCategorie) {
       setselectedCategorie('')
+      setProducts(productInfo.slice(0, postPerPage * 1))
+      setcurrentPage(1)
+      setmaxPages(productInfo.length)
       return
     }
+    const filteredItems = productInfo.filter((product) =>
+      product.categorie.includes(categorie)
+    )
+    setmaxPages(filteredItems.length)
+    let copyProduct = filteredItems.slice(
+      1 * postPerPage - postPerPage,
+      1 * postPerPage
+    )
+    setProducts(copyProduct)
     setselectedCategorie(categorie)
   }
 
@@ -33,7 +65,12 @@ const Categories = () => {
       <div className="container landing-page">
         <div className="row">
           <div className="col justify-content-start">
-            <FontAwesomeIcon icon={faChevronLeft} size="3x" />
+            <FontAwesomeIcon
+              icon={faChevronLeft}
+              size="3x"
+              onClick={() => router.back()}
+              className="goBack-Button"
+            />
           </div>
           <div className="col justify-content-center align-items-center text-center">
             <span className={`${arimo.className} categorie-selected`}>
@@ -60,7 +97,7 @@ const Categories = () => {
           ))}
         </div>
         <div className="row mt-3 categorie-showcase">
-          {productInfo.map((product, index) => (
+          {products.map((product, index) => (
             <div
               key={index}
               className="col-lg-3 col-md-4 col-sm-6 col-12 p-3 d-flex justify-content-center"
@@ -82,6 +119,16 @@ const Categories = () => {
               </Card>
             </div>
           ))}
+        </div>
+        <div className="row-pagination mt-3 justify-content-center align-items-center text-center">
+          <Pagination
+            defaultCurrent={1}
+            total={maxPages}
+            current={currentPage}
+            onChange={(pageNumber, pageSize) => setPage(pageNumber, pageSize)}
+            pageSize={8}
+          />
+          ;
         </div>
       </div>
     </MainLayout>
