@@ -7,6 +7,7 @@ import Image from 'next/image'
 
 const login = () => {
   const { Meta } = Card
+  document.title = 'Log In'
   return (
     <MainLayout>
       <Card className="sign-card shadow" style={{ width: 600 }}>

@@ -11,7 +11,6 @@ import { banners, flashProductInfo } from '@/components/ProductData'
 import CarouselSlider from '@/components/CarouselSlider'
 import { Button, Carousel, Input } from 'antd'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 
 const arimo = Arimo({
   subsets: ['latin'],
@@ -23,9 +22,6 @@ export default function LandingPage() {
   const images = flashProductInfo
   const banner = banners
   const [carousleBackground, setcarousleBackground] = useState('blue')
-  const router = useRouter()
-
-
 
   const setBackgroundColor = (color: string) => {
     switch (color) {

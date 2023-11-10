@@ -37,7 +37,7 @@ const Sider = () => {
         <Divider style={{ backgroundColor: 'white' }} />
         {categories.map((item, index) => (
           <div className="nav-body" key={index}>
-            <div className="sider-body ">
+            <div className="sider-body " key={index}>
               <h2>{item[0]}</h2>
               <div>
                 <ul>

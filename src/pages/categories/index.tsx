@@ -64,6 +64,8 @@ const Categories = () => {
   }
 
   useEffect(() => {
+    document.title = 'Categories'
+
     if (!isArray(defaultCategorie)) {
       changeHandle(defaultCategorie || '', true)
     }

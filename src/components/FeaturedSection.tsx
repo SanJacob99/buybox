@@ -56,7 +56,7 @@ const FeaturedSection = () => {
           </div>
         </div>
       </a>
-      <a className="col-3 p-0 onlyclick">
+      <div className="col-3 p-0 onlyclick">
         <a
           style={{ position: 'relative' }}
           onClick={() => handleNavigationCategorie('Shoes')}
@@ -91,7 +91,7 @@ const FeaturedSection = () => {
             ACCESORIES
           </div>
         </a>
-      </a>
+      </div>
     </div>
   )
 }
