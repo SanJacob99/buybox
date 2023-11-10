@@ -40,7 +40,7 @@ function CardPopUp({ url, name, price, backgroundColor }: Props) {
         <Card
           hoverable
           style={{ width: 240 }}
-          onClick={() => router.push('product')}
+          onClick={() => router.push(`product?productName=${name}`)}
           cover={
             <Image
               src={url}

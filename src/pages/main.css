@@ -338,3 +338,10 @@
 .goBack-Button:hover {
   cursor: pointer;
 }
+
+.product-container {
+  margin-top: 120px;
+}
+.action-buttons {
+  margin-top: 30%;
+}

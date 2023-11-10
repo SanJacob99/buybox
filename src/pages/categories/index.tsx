@@ -125,6 +125,9 @@ const Categories = () => {
                     className="categorie-image"
                   />
                 }
+                onClick={() =>
+                  router.push(`product?productName=${product.name}`)
+                }
               >
                 <Meta title={product.name} description={`${product.price} $`} />
               </Card>
