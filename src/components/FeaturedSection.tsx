@@ -16,6 +16,10 @@ const FeaturedSection = () => {
     router.push(route)
   }
 
+  const handleNavigationCategorie = (categorie: string) => {
+    router.push(`categories?defaultCategorie=${categorie}`)
+  }
+
   return (
     <div className="row">
       <a
@@ -33,7 +37,10 @@ const FeaturedSection = () => {
           ENJOY UP TO 30% DISCOUNT
         </div>
       </a>
-      <a className="col-3 featured-img-col onlyclick">
+      <a
+        className="col-3 featured-img-col onlyclick"
+        onClick={() => handleNavigationCategorie('Tops')}
+      >
         <div style={{ position: 'relative' }}>
           <Image
             src={
@@ -50,7 +57,10 @@ const FeaturedSection = () => {
         </div>
       </a>
       <a className="col-3 p-0 onlyclick">
-        <div style={{ position: 'relative' }}>
+        <a
+          style={{ position: 'relative' }}
+          onClick={() => handleNavigationCategorie('Shoes')}
+        >
           <Image
             src={
               'https://buyboximages.s3.us-west-1.amazonaws.com/shoeShort.jpg'
@@ -63,8 +73,11 @@ const FeaturedSection = () => {
           <div className={`${arimo.className} font-sans text-overlay-short `}>
             SHOES
           </div>
-        </div>
-        <div style={{ position: 'relative' }}>
+        </a>
+        <a
+          style={{ position: 'relative' }}
+          onClick={() => handleNavigationCategorie('Jewlery')}
+        >
           <Image
             src={
               'https://buyboximages.s3.us-west-1.amazonaws.com/bracaletShort.jpg'
@@ -77,7 +90,7 @@ const FeaturedSection = () => {
           <div className={`${arimo.className} font-sans text-overlay-short `}>
             ACCESORIES
           </div>
-        </div>
+        </a>
       </a>
     </div>
   )

@@ -1,5 +1,5 @@
 import MainLayout from '@/components/MainLayout'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,6 +8,7 @@ import { CategoriesPage } from '@/components/ProductData'
 import { productInfo } from '@/components/ProductData'
 import Image from 'next/image'
 import { Card, Pagination } from 'antd'
+import { isArray } from 'lodash'
 
 const { Meta } = Card
 
@@ -40,8 +41,8 @@ const Categories = () => {
     setProducts(copyProduct)
   }
 
-  const changeHandle = (categorie: string) => {
-    if (categorie === selectedCategorie) {
+  const changeHandle = (categorie: string, init?: boolean) => {
+    if (categorie === selectedCategorie && !init) {
       setselectedCategorie('')
       setProducts(productInfo.slice(0, postPerPage * 1))
       setcurrentPage(1)
@@ -51,14 +52,22 @@ const Categories = () => {
     const filteredItems = productInfo.filter((product) =>
       product.categorie.includes(categorie)
     )
+
     setmaxPages(filteredItems.length)
     let copyProduct = filteredItems.slice(
       1 * postPerPage - postPerPage,
       1 * postPerPage
     )
+
     setProducts(copyProduct)
     setselectedCategorie(categorie)
   }
+
+  useEffect(() => {
+    if (!isArray(defaultCategorie)) {
+      changeHandle(defaultCategorie || '', true)
+    }
+  }, [])
 
   return (
     <MainLayout>
