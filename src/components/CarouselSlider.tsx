@@ -8,12 +8,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { productInfo } from './ProductData'
+import { useRouter } from 'next/router'
 
 const { Meta } = Card
 
 const CarouselSlider = () => {
   const images = productInfo
-
+  const router = useRouter()
   const x = useMotionValue(0)
   const slideWidth = -140 * images.length
 
@@ -75,6 +76,7 @@ const CarouselSlider = () => {
                     className="carousel-image"
                   />
                 }
+                onClick={() => router.push(`product?productName=${item.name}`)}
               >
                 <Meta title={item.name} description={`${item.price} $`} />
               </Card>

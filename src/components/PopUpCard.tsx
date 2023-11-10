@@ -1,6 +1,7 @@
 import { Card } from 'antd'
 import Image from 'next/image'
 import { motion, Variants } from 'framer-motion'
+import { useRouter } from 'next/router'
 
 const { Meta } = Card
 
@@ -26,6 +27,7 @@ const cardVariants: Variants = {
   },
 }
 function CardPopUp({ url, name, price, backgroundColor }: Props) {
+  const router = useRouter()
   return (
     <motion.div
       className="card-container"
@@ -38,6 +40,7 @@ function CardPopUp({ url, name, price, backgroundColor }: Props) {
         <Card
           hoverable
           style={{ width: 240 }}
+          onClick={() => router.push(`product?productName=${name}`)}
           cover={
             <Image
               src={url}

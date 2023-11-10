@@ -64,6 +64,8 @@ const Categories = () => {
   }
 
   useEffect(() => {
+    document.title = 'Categories'
+
     if (!isArray(defaultCategorie)) {
       changeHandle(defaultCategorie || '', true)
     }
@@ -122,6 +124,9 @@ const Categories = () => {
                     alt={`Image ${index}`}
                     className="categorie-image"
                   />
+                }
+                onClick={() =>
+                  router.push(`product?productName=${product.name}`)
                 }
               >
                 <Meta title={product.name} description={`${product.price} $`} />
