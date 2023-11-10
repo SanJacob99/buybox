@@ -25,9 +25,7 @@ export default function LandingPage() {
   const [carousleBackground, setcarousleBackground] = useState('blue')
   const router = useRouter()
 
-  const handleNavigation = (route: string) => {
-    router.push(route)
-  }
+
 
   const setBackgroundColor = (color: string) => {
     switch (color) {
