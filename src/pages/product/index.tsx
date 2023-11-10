@@ -64,7 +64,8 @@ const Product = () => {
               <div className="text-center ">
                 <div className="product-desc">
                   <h1>{product.name}</h1>
-                  <p className="mt-5 p-5">
+                  <h4>{product.price}$</h4>
+                  <p className=" p-5">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Quisque aliquet nisi vel mi condimentum, eu dapibus erat
                     elementum. Curabitur auctor nunc vel felis ullamcorper, non
